@@ -27,6 +27,36 @@
     <ClCompile Include="..\..\generated\dcimgui_internal.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\generated\backends\dcimgui_impl_dx12.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\backends\dcimgui_impl_win32.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\imgui\backends\imgui_impl_dx12.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\imgui\backends\imgui_impl_win32.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\backends\dcimgui_impl_dx9.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\backends\dcimgui_impl_dx11.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\imgui\backends\imgui_impl_dx9.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\imgui\backends\imgui_impl_dx11.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\misc\freetype\dcimgui_freetype.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\imgui\misc\freetype\imgui_freetype.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\generated\dcimgui.h">
@@ -48,6 +78,36 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\dcimgui_internal.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\backends\dcimgui_impl_dx12.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\backends\dcimgui_impl_win32.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\imgui\backends\imgui_impl_dx12.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\imgui\backends\imgui_impl_win32.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\backends\dcimgui_impl_dx9.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\backends\dcimgui_impl_dx11.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\imgui\backends\imgui_impl_dx9.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\imgui\backends\imgui_impl_dx11.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\misc\freetype\dcimgui_freetype.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\imgui\misc\freetype\imgui_freetype.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>

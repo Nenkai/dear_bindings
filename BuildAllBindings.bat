@@ -9,6 +9,7 @@ set OUTPUT_PATH=generated
 
 if not exist "generated" mkdir "generated"
 if not exist "generated\backends" mkdir "generated\backends"
+if not exist "generated\misc\freetype" mkdir "generated\misc\freetype"
 
 rem Process main imgui.h header
 
@@ -24,6 +25,14 @@ echo.
 echo Processing imgui_internal.h
 echo.
 python dear_bindings.py -o %OUTPUT_PATH%\dcimgui_internal --include %IMGUI_PATH%\imgui.h %IMGUI_PATH%\imgui_internal.h
+IF ERRORLEVEL 1 GOTO fail
+
+echo.
+echo Processing imgui_freetype.h
+echo.
+
+:: BIG NOTE: We must pass --backend to imgui_freetype to make sure dcimgui_freetype.h refers to dcimgui.h, not imgui.h!
+python dear_bindings.py --backend -o %OUTPUT_PATH%\misc\freetype\dcimgui_freetype --include %IMGUI_PATH%\imgui.h --imconfig-path %IMGUI_PATH%\imconfig.h %IMGUI_PATH%\misc\freetype\imgui_freetype.h
 IF ERRORLEVEL 1 GOTO fail
 
 rem Process backends

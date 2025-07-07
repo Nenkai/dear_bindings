@@ -19,22 +19,42 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\imgui\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\..\..\imgui\backends\imgui_impl_dx12.cpp" />
+    <ClCompile Include="..\..\..\imgui\backends\imgui_impl_dx9.cpp" />
+    <ClCompile Include="..\..\..\imgui\backends\imgui_impl_win32.cpp" />
     <ClCompile Include="..\..\..\imgui\imgui.cpp" />
     <ClCompile Include="..\..\..\imgui\imgui_demo.cpp" />
     <ClCompile Include="..\..\..\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\..\..\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\..\imgui\misc\freetype\imgui_freetype.cpp" />
+    <ClCompile Include="..\..\generated\backends\dcimgui_impl_dx11.cpp" />
+    <ClCompile Include="..\..\generated\backends\dcimgui_impl_dx12.cpp" />
+    <ClCompile Include="..\..\generated\backends\dcimgui_impl_dx9.cpp" />
+    <ClCompile Include="..\..\generated\backends\dcimgui_impl_win32.cpp" />
     <ClCompile Include="..\..\generated\dcimgui.cpp" />
     <ClCompile Include="..\..\generated\dcimgui_internal.cpp" />
+    <ClCompile Include="..\..\generated\misc\freetype\dcimgui_freetype.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\imgui\backends\imgui_impl_dx11.h" />
+    <ClInclude Include="..\..\..\imgui\backends\imgui_impl_dx12.h" />
+    <ClInclude Include="..\..\..\imgui\backends\imgui_impl_dx9.h" />
+    <ClInclude Include="..\..\..\imgui\backends\imgui_impl_win32.h" />
     <ClInclude Include="..\..\..\imgui\imgui.h" />
     <ClInclude Include="..\..\..\imgui\imgui_internal.h" />
     <ClInclude Include="..\..\..\imgui\imstb_rectpack.h" />
     <ClInclude Include="..\..\..\imgui\imstb_textedit.h" />
     <ClInclude Include="..\..\..\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\..\..\imgui\misc\freetype\imgui_freetype.h" />
+    <ClInclude Include="..\..\generated\backends\dcimgui_impl_dx11.h" />
+    <ClInclude Include="..\..\generated\backends\dcimgui_impl_dx12.h" />
+    <ClInclude Include="..\..\generated\backends\dcimgui_impl_dx9.h" />
+    <ClInclude Include="..\..\generated\backends\dcimgui_impl_win32.h" />
     <ClInclude Include="..\..\generated\dcimgui.h" />
     <ClInclude Include="..\..\generated\dcimgui_internal.h" />
+    <ClInclude Include="..\..\generated\misc\freetype\dcimgui_freetype.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -58,13 +78,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -89,10 +109,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)..\..\imgui;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\nenkai\source\repos\dear_bindings\examples\ImGuiLib\vcpkg_installed\x64-windows\x64-windows\include\plutovg;C:\Users\nenkai\source\repos\dear_bindings\examples\ImGuiLib\vcpkg_installed\x64-windows\x64-windows\include\plutosvg;$(SolutionDir)..\generated;$(SolutionDir)..\generated\backends;$(SolutionDir)..\generated\misc\freetype;$(SolutionDir)..\..\imgui;$(SolutionDir)..\..\imgui\backends;$(SolutionDir)..\..\imgui\misc\freetype;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)/Lib/x64;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)..\..\imgui;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\nenkai\source\repos\dear_bindings\examples\ImGuiLib\vcpkg_installed\x64-windows\x64-windows\include\plutovg;C:\Users\nenkai\source\repos\dear_bindings\examples\ImGuiLib\vcpkg_installed\x64-windows\x64-windows\include\plutosvg;$(SolutionDir)..\generated;$(SolutionDir)..\generated\backends;$(SolutionDir)..\generated\misc\freetype;$(SolutionDir)..\..\imgui;$(SolutionDir)..\..\imgui\backends;$(SolutionDir)..\..\imgui\misc\freetype;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)/Lib/x64;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -132,7 +157,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_LIB;CIMGUI_API=extern "C" __declspec(dllexport);CIMGUI_IMPL_API=extern "C" __declspec(dllexport);IMGUI_USE_WCHAR32;IMGUI_ENABLE_FREETYPE;IMGUI_ENABLE_FREETYPE_PLUTOSVG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -141,6 +166,7 @@
       <SubSystem>
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>dxgi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -149,7 +175,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_LIB;CIMGUI_API=extern "C" __declspec(dllexport);CIMGUI_IMPL_API=extern "C" __declspec(dllexport);IMGUI_USE_WCHAR32;IMGUI_ENABLE_FREETYPE;IMGUI_ENABLE_FREETYPE_PLUTOSVG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -160,6 +186,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>dxgi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
